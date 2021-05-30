@@ -1,0 +1,65 @@
+<!-- 
+  Khai Tran
+  I used the starting code found at https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Superior Store</title>
+	<!--This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp-->
+	<link href="styles/mystyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Superior Store</h1>
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client Information</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Welcome to Superior Store! The most importang thing to us is your health and safety. Select your grocery needs below.</p>
+    Choose a Category:
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <option value=""></option> 
+      <option value="lactoseFree">Lactose-Free</option>
+      <option value="nutFree">Nut-Free</option>
+      <option value="None">None</option>
+	  </select>
+  <p>Organic Preference:</p>
+    <select id="organicSelect" name="organicSelect" onchange="displayOrganicProducts(this.id, 'displayProduct')">
+      <option value=""></option>
+      <option value="organic">Organic</option>
+      <option value="anything">Conventional</option>
+    </select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your personalized products</h3>
+  <p>Your health and safety is our priority! We have compiled items that are personalized to your needs.</p>
+	Select your desired items:
+	<div id="displayProduct"></div>
+	<button id="addCart" type="button" class="block" onclick="selectedItems()">
+	  Update Cart
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+<footer>
+  <p>designed by Merikaki</p>
+</footer>
+
+</body>
+</html>
