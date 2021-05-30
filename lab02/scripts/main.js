@@ -38,15 +38,26 @@ function displayOrganicProducts(slct1, slct2){
 	s2.innerHTML = "";
 
 	for (i = 0; i < optionArray.length; i++) {
+		var productName = optionArray[i].name
+
 		if ((optionArray[i].organic == true) && (optionArray[i].priceIncreased == false) && (s1.value == "organic")){
 			optionArray[i].price*=1.25;
 			optionArray[i].priceIncreased = true;
-			console.log(optionArray[i].name + "'s price has increased");
+			console.log(productName + "'s price has increased");
 		} else if ((optionArray[i].organic == true) && (optionArray[i].priceIncreased == true) && ((s1.value == "") || (s1.value == "anything"))){
 			optionArray[i].price/=1.25;
 			optionArray[i].priceIncreased = false;
-			console.log(optionArray[i].name + "'s price has decreased");
+			console.log(productName + "'s price has decreased");
 		}
+
+		// create the checkbox and add in HTML DOM
+		var checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.name = "product";
+		checkbox.value = productName;
+
+		s2.appendChild(checkbox);
+		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = optionArray[i].name + optionArray[i].price;
@@ -97,7 +108,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName + productPrice;
-		label.appendChild(document.createTextNode(`$ ${productPrice}      -     ${productName}`));
+		label.appendChild(document.createTextNode(`$ ${productPrice.toFixed(2)} - ${productName}`));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
