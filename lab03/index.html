@@ -1,0 +1,124 @@
+<!-- 
+  Khai Tran
+  I used the starting code found at https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery
+  The second iteration of this code for lab 03 will follow the wizard pattern
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Superior Store</title>
+	<!--This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp-->
+	<link href="styles/mystyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Superior Store</h1>
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client Information</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <button class="tablinks" onclick="openInfo(event, 'Checkout')">Checkout</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Welcome to Superior Store! The most important thing to us is your health and safety. Select your grocery needs below.</p>
+    Choose a Category:
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <option value=""></option> 
+      <option value="lactoseFree">Lactose-Free</option>
+      <option value="nutFree">Nut-Free</option>
+      <option value="None">None</option>
+	  </select>
+  <p>Organic Preference:</p>
+    <select id="organicSelect" name="organicSelect" onchange="displayOrganicProducts(this.id, 'displayProduct')">
+      <option value=""></option>
+      <option value="organic">Organic</option>
+      <option value="anything">Conventional</option>
+    </select>
+    <br>
+    <button type="GoToProducts" onclick="openInfo(event, 'Products')">Next -></button>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your personalized products</h3>
+  <p>Your health and safety is our priority! We have compiled items that are personalized to your needs.</p>
+	Select your desired items:
+	<div id="displayProduct"></div>
+	<button id="addCart" type="button" class="block" onclick="selectedItems()">
+	  Update Cart
+	</button>
+
+  <button type="GoToCart" onclick="openInfo(event, 'Cart')">Next -></button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <div id="displayCart"></div>
+  <button type="GoToCheckout" onclick="openInfo(event, 'Checkout')">Process to Checkout -></button>
+</div>
+
+<!-- I followed the tutorial on https://tutorialzine.com/2016/11/simple-credit-card-validation-form -->
+<div id="Checkout" class="tabcontent">
+  <h3>Checkout</h3>
+  <p>Enter in your payment info to finilize your purchase
+  <img src="paypal.png" alt="paypal picture">
+  <br>(make sure to enter in your real credit card number for testing purposes ;)</p>
+  <br>
+  <form>
+    <!-- taking name -->
+    <div class = "form-group owner">
+      <label for = "owner">Owner</label>
+      <input type="text" class="form-control" id="owner">
+    </div>
+    <!-- taking CVV -->
+    <div class = "form-group cvv">
+      <label for="cvv">CVV</label>
+      <input type="text" class="form-control" id="cvv">
+    </div>
+    <!-- taking card number -->
+    <div class = "form-group" id = "card-number-field">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" class="form-control" id="cardNumer">
+    </div>
+    <!-- taking expiry date -->
+    <div class="form-group" id="expiration-date">
+      <label>Expiration Date</label>
+      <select>
+        <!-- I am not taking real values, it will only display -->
+        <option value="01">01</option>
+        <option value="01">02</option>
+        <option value="01">03</option>
+        <option value="01">04</option>
+        <option value="01">05</option>
+        <option value="01">06</option>
+        <option value="01">07</option>
+        <option value="01">08</option>
+        <option value="01">09</option>
+        <option value="01">10</option>
+        <option value="01">11</option>
+        <option value="01">12</option>
+      </select>
+      <select>
+        <option value="01">2021</option>
+        <option value="01">2022</option>
+        <option value="01">2023</option>
+        <option value="01">2024</option>
+        <option value="01">2025</option>
+      </select>
+    </div>
+  </form>
+  <input type="submit">
+</div>
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+<footer>
+  <p>designed by Merikaki</p>
+</footer>
+
+</body>
+</html>
