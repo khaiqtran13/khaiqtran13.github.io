@@ -10,6 +10,7 @@
   <title>Superior Store</title>
 	<!--This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp-->
 	<link href="styles/mystyle.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
       <option value="anything">Conventional</option>
     </select>
     <br>
-    <button type="GoToProducts" onclick="openInfo(event, 'Products')">Next -></button>
+    <button type="next" onclick="openInfo(event, 'Products')">Go To Products <i class="fa fa-chevron-circle-right"></i></button>
 </div>
 
 <div id="Products" class="tabcontent">
@@ -51,23 +52,22 @@
 	<button id="addCart" type="button" class="block" onclick="selectedItems()">
 	  Update Cart
 	</button>
-
-  <button type="GoToCart" onclick="openInfo(event, 'Cart')">Next -></button>
+  <br>
+  <button type="next" onclick="openInfo(event, 'Cart')">Go To Cart <i class="fa fa-chevron-circle-right"></i></button>
 </div>
 
 <div id="Cart" class="tabcontent">
   <h3>Cart</h3>
   <div id="displayCart"></div>
-  <button type="GoToCheckout" onclick="openInfo(event, 'Checkout')">Process to Checkout -></button>
+  <button type="next" onclick="openInfo(event, 'Checkout')">Go To Checkout <i class="fa fa-chevron-circle-right"></i></button>
 </div>
 
 <!-- I followed the tutorial on https://tutorialzine.com/2016/11/simple-credit-card-validation-form -->
 <div id="Checkout" class="tabcontent">
   <h3>Checkout</h3>
-  <p>Enter in your payment info to finilize your purchase
-  <img src="paypal.png" alt="paypal picture">
+  <p>Enter in your payment info to finalize your purchase
   <br>(make sure to enter in your real credit card number for testing purposes ;)</p>
-  <br>
+  <br><img src="paypal.png" alt="paypal picture">
   <form>
     <!-- taking name -->
     <div class = "form-group owner">
@@ -111,7 +111,7 @@
       </select>
     </div>
   </form>
-  <input type="submit">
+  <input type="submit" onclick="alert('Thank you for your purchase!')">
 </div>
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>

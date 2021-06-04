@@ -28,6 +28,30 @@ input[type=submit] {
   cursor: pointer;
 }
 
+button[type=next] {
+  width: 15%;
+  height: 10%;
+  background-color: #4b0fbd;
+  color: white;
+  padding: 15px 15px;
+  margin: 8px 0;
+  border: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=button] {
+  width: 15%;
+  height: 10%;
+  background-color: #4b0fbd;
+  color: white;
+  padding: 15px 15px;
+  margin: 8px 0;
+  border: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 footer {
   text-align: center
 }
