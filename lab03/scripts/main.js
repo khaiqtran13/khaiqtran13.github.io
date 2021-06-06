@@ -30,63 +30,29 @@ function compareItems(obj1, obj2) {
 	if (obj1.price > obj2.price) return 1;
 }
 
-//makes items that can be organic more expensive
-function displayOrganicProducts(slct1, slct2){
-	console.log(optionArray);
-	var s1 = document.getElementById(slct1);
-    var s2 = document.getElementById(slct2);
-	s2.innerHTML = "";
 
-	for (i = 0; i < optionArray.length; i++) {
-		var productName = optionArray[i].name
+// generate a checkbox list from a list of products it makes each product name as the label for the checkbox
 
-		if ((optionArray[i].organic == true) && (optionArray[i].priceIncreased == false) && (s1.value == "organic")){
-			optionArray[i].price*=1.25;
-			optionArray[i].priceIncreased = true;
-			console.log(productName + "'s price has increased");
-		} else if ((optionArray[i].organic == true) && (optionArray[i].priceIncreased == true) && ((s1.value == "") || (s1.value == "anything"))){
-			optionArray[i].price/=1.25;
-			optionArray[i].priceIncreased = false;
-			console.log(productName + "'s price has decreased");
-		}
+//attempting to fetch by reference instead of parameters
+function populateListProductChoices() {
 
-		// create the checkbox and add in HTML DOM
-		var checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
-		checkbox.name = "product";
-		checkbox.value = productName;
 
-		s2.appendChild(checkbox);
-		
-		// create a label for the checkbox, and also add in HTML DOM
-		var label = document.createElement('label')
-		label.htmlFor = optionArray[i].name + optionArray[i].price;
-		if (optionArray[i].priceIncreased == true){
-			label.appendChild(document.createTextNode(`$ ${optionArray[i].price.toFixed(2)}-${optionArray[i].name} [ORGANIC]`));
-		} else {
-			label.appendChild(document.createTextNode(`$ ${optionArray[i].price.toFixed(2)}-${optionArray[i].name}`));
-		}
-		s2.appendChild(label);
-		
-		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));  
-	}
+    var lactoseRef = document.getElementById("lactoseFree").checked;
+    var nutRef = document.getElementById("nutFree").checked;
+	var organicRef = document.getElementById("organic").checked;
+	var noneRef = document.getElementById("none").checked;
+	var disp = document.getElementById("displayProduct");
+
+	console.log("populateListProductChoices var:", lactoseRef, nutRef, organicRef, noneRef);
 	
-}
+	disp.innerHTML="";
 
-// generate a checkbox list from a list of products
-// it makes each product name as the label for the checkbos
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
-    var s2 = document.getElementById(slct2);
-	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
-    s2.innerHTML = "";
-		
 	// obtain a reduced list of products based on restrictions
-    optionArray = restrictListProducts(products, s1.value);
+    optionArray = restrictListProducts(products, lactoseRef, nutRef, organicRef, noneRef);
 	
 	optionArray.sort(compareItems);
-	console.log(optionArray);
+	
+	console.log("populated array:", optionArray);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
@@ -102,17 +68,21 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
+	
+		//s2.appendChild(checkbox);
+		disp.appendChild(checkbox);
 
-		s2.appendChild(checkbox);
-		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName + productPrice;
 		label.appendChild(document.createTextNode(`$ ${productPrice.toFixed(2)} - ${productName}`));
-		s2.appendChild(label);
+		
+		//s2.appendChild(label);
+		disp.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		//s2.appendChild(document.createElement("br"));    
+		disp.appendChild(document.createElement("br"));
 	}
 }
 	

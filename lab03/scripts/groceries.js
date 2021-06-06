@@ -1,13 +1,12 @@
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products		 
-let name = "Khai";
 var products = [
 	{
 		name: "brocoli",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
-		priceIncreased: false,
+		none: true,
 		price: 1.99
 	},
 	{
@@ -15,6 +14,7 @@ var products = [
 		lactoseFree: true,
 		nutFree: true,
 		organic: false,
+		none: true,
 		price: 2.35
 	},
 	{
@@ -22,7 +22,7 @@ var products = [
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
-		priceIncreased: false,
+		none: true,
 		price: 9.99
 	},
 	{
@@ -30,6 +30,7 @@ var products = [
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
+		none: true,
 		price: 6.99
 	},
 	{
@@ -37,7 +38,7 @@ var products = [
 		lactoseFree: false,
 		nutFree: true,
 		organic: true,
-		priceIncreased: false,
+		none: true,
 		price: 3.99,
 	},
 	{
@@ -45,6 +46,7 @@ var products = [
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
+		none: true,
 		price: 8.99,	
 	},
 	{
@@ -52,6 +54,7 @@ var products = [
 		lactoseFree: false,
 		nutFree: false,
 		organic: false,
+		none: true,
 		price: 5.99
 	},
 	{
@@ -59,6 +62,7 @@ var products = [
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
+		none: true,
 		price: 4.99
 	},
 	{
@@ -66,7 +70,7 @@ var products = [
 		lactoseFree: false,
 		nutFree: true,
 		organic: true,
-		priceIncreased: false,
+		none: true,
 		price: 7.99
 	},
 	{
@@ -74,31 +78,27 @@ var products = [
 		lactoseFree: true,
 		nutFree: true,
 		organic: false,
+		none: true,
 		price: 5.55
 	}
 ];
 
-
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction, lactoseValue) {
+function restrictListProducts(prods, lactoseVal, nutVal, organicVal, noneVal) {
 	let products = [];
-	for (let i=0; i<prods.length; i+=1) {
-		//restrcitions
-		if ((restriction == "lactoseFree") && (prods[i].lactoseFree == true)){
-			products.push(prods[i]);
-		}
-		else if ((restriction == "nutFree") && (prods[i].nutFree == true)){
-			products.push(prods[i]);
-		}
-		else if (restriction == "None"){
-			products.push(prods[i]);
-		}
 
-		//organic
-		if ((prods[i].organic == true) && (lactoseValue == "organic")){
-			prods[i].price*=1.1;
+	//do quick boolean logic
+	for (let i=0; i<prods.length; i+=1) {
+		//restrictions
+		if (noneVal){
+			products.push(prods[i]);
+		} else if (
+		!(!prods[i].lactoseFree && lactoseVal) 
+		&& !(!prods[i].nutFree && nutVal) 
+		&& !(!prods[i].organic && organicVal)){
+			products.push(prods[i]);
 		}
 	}
 	return products;

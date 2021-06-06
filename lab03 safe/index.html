@@ -28,26 +28,25 @@
   <h3>Client Information</h3>
   <p>Welcome to Superior Store! The most important thing to us is your health and safety. Select your grocery needs below.</p>
     Choose a Category:
-    <br>
-    <label for="Lactose-Free">
-      <input type="checkbox" id="lactoseFree" value="lactoseFree" onchange="populateListProductChoices()">
-      Lactose-Free
-    </label>
-    <br>
-    <label for="nutFree">
-      <input type="checkbox" id="nutFree" value="nutFree" onchange="populateListProductChoices()">
-      Nut-Free
-    </label>
-    <br>
-    <label for="organic">
-      <input type="checkbox" id="organic" value="organic" onchange="populateListProductChoices()">
-      Organic
-    </label>
-    <br>
-    <label for="none">
-      <input type="checkbox" id="none" value="none" onchange="populateListProductChoices()">
-      None
-    </label>
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <option value=""></option> 
+      <option value="lactoseFree">Lactose-Free</option>
+      <option value="nutFree">Nut-Free</option>
+      <option value="None">None</option>
+	  </select>
+  <!-- ATTEMPT TO TURN INTO CHECKLIST 
+    <form id="dietSelect" name="dietSelect" onchange="populateListProductChoice(this.id, 'displayProduct')">
+    <input type="checkbox" id="lactoseFree" value="lactoseFree">
+    <label for="lactoseFree">None</label>
+    <input type="checkbox" id="lactoseFree" value="lactoseFree">
+    <label for="lactoseFree">Lactose-Free</label>
+  </form> -->
+  <p>Organic Preference:</p>
+    <select id="organicSelect" name="organicSelect" onchange="displayOrganicProducts(this.id, 'displayProduct')">
+      <option value=""></option>
+      <option value="organic">Organic</option>
+      <option value="anything">Conventional</option>
+    </select>
     <br>
     <button type="next" onclick="openInfo(event, 'Products')">Go To Products <i class="fa fa-chevron-circle-right"></i></button>
 </div>
