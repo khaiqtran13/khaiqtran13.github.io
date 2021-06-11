@@ -32,16 +32,33 @@ Many websites will use what is called CSS grid layouts, where you will have a he
 
     <div class=" p-3 my-3 border bg-light">
         <h1 class=""> About us</h1>
-        <p class="p-4 my-3" style="font-size: 25px">Fyzio Klinque is a clinic located in Ottawa, Ontario</p>
+        <p class="p-4 my-3" style="font-size: 25px">Fyzio Klinque is a physiotherapy clinic located in Ottawa, Ontario</p>
         <!-- potentially add an address link -->
         <p style="font-size: 25px; padding-left: 1.5rem">The goal of Fyzio Klinque is to provide the absolute best care and service to our customers.
-        Come visit the Fyzio Klinique and found out why our patients never have to return!</p>
+        Come visit the Fyzio Klinique and find out why our patients never have to return!<br><br>
+        <a href= "https://www.google.com/maps/dir/45.3845979,-75.6985622/mcdonalds+fallowfield/@45.3433203,-75.7789201,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x4ccdfd6b5127927b:0x90f381f72e24a5eb!2m2!1d-75.7329716!2d45.2974351" target="_blank">
+        Get directions!</a>
+    </p>
     </div>
+    
+    <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
+    https://getbootstrap.com/docs/5.0/components/alerts/
+    -->
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h1>Attention!</h1>
+        For the time being, our capacity is limited to 15% due to COVID-19 restrictions<br>
+        <a href="https://covid-19.ontario.ca/public-health-measures" target="_blank"><br>Find out more</a>
+        <br><br><strong>ESSKEETITTTT</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <!--
     Tables are one of many ways to organize information easily.
     It is a good way to list of prices, or services in a business website
     https://getbootstrap.com/docs/5.0/content/tables/
     -->
+
     <table class="table table-info table-hover">
         <thead>
             <tr>
@@ -80,17 +97,20 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                 our trained lab technicians</td>
                 <td>$690</td>
             </tr>
+            <tr>
+                <td>Foot Orthotics</td>
+                <td>The standard evaluation of feet posture and casting for orthotics<br>
+                based on your feet's condition</td>
+                <td>$500</td>
+            </tr>
+            <tr>
+                <td>ROM Excercise Sessions</td>
+                <td>The standard Range of Motion (ROM) excercise sessions give to you by<br>
+                    our trained professionals.</td>
+                <td>$65 per session</td>
+            </tr>
         </tbody>
     </table>
-    <h1>Here is an alert!</h1>
-    <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
-    https://getbootstrap.com/docs/5.0/components/alerts/
-    -->
-    <p>This indicated something important in the page</p>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>ESSKEETITTTT</strong> Yuh lil pump Yuh
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
 
     <h1>Button States</h1>
     <!--
@@ -116,7 +136,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     </button>
 
     -->
-    
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -180,12 +200,12 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </p>
         </div>
     </div>
-
+    <br>
     <!--
     We can also use buttons to expand some hidden options
     https://getbootstrap.com/docs/5.0/components/collapse/
     -->
-    <h1>More Information</h1>
+    <!-- <h1>More Information</h1>
 
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Button To Expand Options
@@ -201,31 +221,33 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     https://getbootstrap.com/docs/5.0/components/accordion/
     -->
 
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <h1>Contact us</h1>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Accordion Item #1
+                    Telephone Number
                 </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">I can put information in this area</div>
+                <div class="accordion-body">(613) 420-6969</div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Accordion Item #2
+                    Email
                 </button>
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">I can put information in this area</div>
+                <div class="accordion-body">fyzioklinque@gmail.com</div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Accordion Item #3
+                    Book a Screening Session
+
                 </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -233,6 +255,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </div>
         </div>
     </div>
+        
 
 </div>
 <!-- here we input our javascript helper -->
