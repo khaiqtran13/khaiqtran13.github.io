@@ -27,7 +27,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     -->
 
     <nav class="topnav">
-        <h1><img src="images/company_logo.png" width="130" height="130">Welcome to Fyzio Klinique</h1>
+        <h1><img src="images/gucci_logo.jpeg" width="180" height="130">Welcome to Fyzio Klinique</h1>
     </nav>
 
     <div class=" p-3 my-3 border bg-light">
@@ -112,28 +112,35 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     </table>
 
     <h1>Contact Information Form</h1>
-    
+
     <form>
         <div class="book-sess">
-            <label for="enterFirstName">First Name</label>
-            <input type="firstName" class="form-control" id="userFirstName" placeholder="Enter first name">
+            <div class="form-row">
+                <div class="row">
+                    <div class="col">
+                        <label for="enterFirstName">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="col">
+                        <label for="enterFirstName">First Name</label>
+                        <input type="text" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+            </div>
             <br>
-            <label for="enterLastName">Last Name</label>
-            <input type="lastName" class="form-control" id="userLastName" placeholder="Enter last name">
+                <label for="enterEmailAddress">Email</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Enter email address" required>
             <br>
-            <label for="enterEmailAddress">Email</label>
-            <input type="email" class="form-control" id="userEmail" placeholder="Enter email address">
-            <br>
-            <label for="enterNumber">Phone Number</label>
-            <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx">
+                <label for="enterNumber">Phone Number</label>
+                <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" required>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="homephone-box" value="homephone">
-                <label class="form-check-label" for="homephone-box">homephone</label>
-              </div>
-              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="homephone-box">home-phone</label>
+            </div>
+            <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cellphone-box" value="cellphone">
-                <label class="form-check-label" for="cellphone-box">cellphone</label>
-              </div>
+                <label class="form-check-label" for="cellphone-box">cell-phone</label>
+            </div>
             <br>
         </div>
         <br>
@@ -164,9 +171,8 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </div>
         </div>
         <br>
-        <input class="btn btn-primary" type="reset" value="Reset">
-        <input class="btn btn-primary" type="submit" value="Submit">
-
+            <input class="btn btn-primary" type="reset" value="Reset">
+            <input class="btn btn-primary" type="submit" value="Submit">
     </form>
 
     <!--
