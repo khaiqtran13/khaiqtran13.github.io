@@ -8,13 +8,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
-  .topnav {
-      background-color:black;
-      text-align: center;
-      color:white;
-  }
+.topnav {
+    background-color:black;
+    text-align: center;
+    color:white;
+}
