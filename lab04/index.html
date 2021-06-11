@@ -33,14 +33,13 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     <div class=" p-3 my-3 border bg-light">
         <h1 class=""> About us</h1>
         <p class="p-4 my-3" style="font-size: 25px">Fyzio Klinque is a physiotherapy clinic located in Ottawa, Ontario</p>
-        <!-- potentially add an address link -->
-        <p style="font-size: 25px; padding-left: 1.5rem">The goal of Fyzio Klinque is to provide the absolute best care and service to our customers.
+        <p style="padding-left: 1.5rem">The goal of Fyzio Klinque is to provide the absolute best care and service to our customers.
         Come visit the Fyzio Klinique and find out why our patients never have to return!<br><br>
         <a href= "https://www.google.com/maps/dir/45.3845979,-75.6985622/mcdonalds+fallowfield/@45.3433203,-75.7789201,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x4ccdfd6b5127927b:0x90f381f72e24a5eb!2m2!1d-75.7329716!2d45.2974351" target="_blank">
         Get directions!</a>
     </p>
     </div>
-    
+
     <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
     https://getbootstrap.com/docs/5.0/components/alerts/
     -->
@@ -113,14 +112,34 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     </table>
 
     <h1>Button States</h1>
+    
+    <form>
+        <div class="book-sess">
+            <label for="enterFirstName">First Name</label>
+            <input type="firstName" class="form-control" id="userFirstName" placeholder="Enter first name">
+            <br>
+            <label for="enterLastName">Last Name</label>
+            <input type="lastName" class="form-control" id="userLastName" placeholder="Enter last name">
+            <br>
+            <label for="enterEmailAddress">Email</label>
+            <input type="email" class="form-control" id="userEmail" placeholder="Enter email address">
+            <br>
+            <!-- add a form to book an appt -->
+        </div>
+
+        <button type="button" class="btn btn-warning">Submit</button>
+
+    </form>
+
     <!--
     Buttons can be used for submitting forms, triggering events among many other things.
     https://getbootstrap.com/docs/5.0/components/buttons/
     -->
 
+    <!-- 
     <button type="button" class="btn btn-warning">Primary Button</button>
     <button type="button" class="btn btn-warning active">Active Button</button>
-    <button type="button" class="btn btn-warning" disabled>Disabled Button</button>
+    <button type="button" class="btn btn-warning" disabled>Disabled Button</button> -->
 
     <!--
     <h1>Modal Example</h1>
