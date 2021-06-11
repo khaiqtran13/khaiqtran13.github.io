@@ -1,0 +1,241 @@
+<!doctype html>
+<!-- Here is a link to the code the documents this code is based on
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+This will help you get started with your code!
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <title>Module 4 Lab</title>
+</head>
+<body>
+<!--
+I store all of the page information in a container,
+Many websites will use what is called CSS grid layouts, where you will have a header, body, footer and both sides used for ads or other information
+-->
+<div class = "container-lg">
+
+    <!--
+    Most websites now feature what is called a NavBar.
+    The example I give is quite simple with a logo and some text, but you can use it for many navigational patterns
+    https://getbootstrap.com/docs/5.0/components/navbar/
+    -->
+
+    <nav class="topnav">
+        <h1><img src="images/company_logo.png" width="130" height="130">Welcome to my Fyzio Klinique</h1>
+    </nav>
+
+    <div class=" p-3 my-3 border bg-light">
+        <h1 class=""> About us</h1>
+        <p class="p-4 my-3" style="font-size: 25px">Fyzio Klinque is a clinic located in Ottawa, Ontario</p>
+        <!-- potentially add an address link -->
+        <p style="font-size: 25px; padding-left: 1.5rem">The goal of Fyzio Klinque is to provide the absolute best care and service to our customers.
+        Come visit the Fyzio Klinique and found out why our patients never have to return!</p>
+    </div>
+    <!--
+    Tables are one of many ways to organize information easily.
+    It is a good way to list of prices, or services in a business website
+    https://getbootstrap.com/docs/5.0/content/tables/
+    -->
+    <table class="table table-info table-hover">
+        <thead>
+            <tr>
+                <th scope="col"><h2>Service</h2></th>
+                <th scope="col"><h2>Description</h2></th>
+                <th scope="col"><h2>Price</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Annual Physicals</td>
+                <td>A physical examination provided to you by your primary care<br>
+                    provider to check your overall health</td>
+                <td>$125</td>
+            </tr>
+            <tr>
+                <td>Laboratory Testings</td>
+                <td>The standard Labatory Testing includes both a blood test and urine test</td>
+                <td>$30</td>
+            </tr>
+            <tr>
+                <td>COVID-19 Vaccination</td>
+                <td>The standard Pfizer COVID-19 Vaccination by needles provided to you by<br>
+                trained nurses</td>
+                <td>$50</td>
+            </tr>
+            <tr>
+                <td>MRI</td>
+                <td>The standard Magnetic Resonance Imaging technique provided to you by<br>
+                our trained lab technicians</td>
+                <td>$420</td>
+            </tr>
+            <tr>
+                <td>Ultrasound</td>
+                <td>The standard ultrasound diagnostic provided to you by<br>
+                our trained lab technicians</td>
+                <td>$690</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Here is an alert!</h1>
+    <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
+    https://getbootstrap.com/docs/5.0/components/alerts/
+    -->
+    <p>This indicated something important in the page</p>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>ESSKEETITTTT</strong> Yuh lil pump Yuh
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <h1>Button States</h1>
+    <!--
+    Buttons can be used for submitting forms, triggering events among many other things.
+    https://getbootstrap.com/docs/5.0/components/buttons/
+    -->
+
+    <button type="button" class="btn btn-warning">Primary Button</button>
+    <button type="button" class="btn btn-warning active">Active Button</button>
+    <button type="button" class="btn btn-warning" disabled>Disabled Button</button>
+
+    <!--
+    <h1>Modal Example</h1>
+
+    Button trigger modal
+    We use the same button code from above, but now we can trigger a modal to appear.
+    The bootstrap tutorial includes many different types of modals that you can explore
+    https://getbootstrap.com/docs/5.0/components/modal/
+    
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    In the body we can add various components. In this example some radio buttons
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards are quite useful when building a website. They are a useful way to organize information.
+    They can be organized using a CSS grid or other layout options.
+    https://getbootstrap.com/docs/5.0/components/card/
+    -->
+
+    <h1>Meet the Physicians!</h1>
+    <div class="row justify-content-around">
+        <div class="card" style="width: 18rem;">
+            <img src="images/theexaminer.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5>Dr. Ryder Balmes</h5>
+                <p class="card-text">Dr. Balmes is our most experienced physician with almost 15 years
+                    of experience in the field.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="images/female_labtech.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5>Dr Caitlyn Lieder</h5>
+                <p class="card-text">Dr. Lieder has recently graduated from Stanford Medical School 
+                    and has just joined Fyzio Klinque in 2019.
+                </p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="images/lilpump.jpeg" height = 360 class="card-img-top" alt="ESKESTIT">
+            <h5>Gazzy Garcia</h5>
+            <p class="card-text">Mr. Garcia AKA lil pump is the CEO of Fyzio Klinique; he founded this company after
+                dropping out of Hardvard Medical School in 2017. <STRONG>ESSKEETITTTT</STRONG>
+            </p>
+        </div>
+    </div>
+
+    <!--
+    We can also use buttons to expand some hidden options
+    https://getbootstrap.com/docs/5.0/components/collapse/
+    -->
+    <h1>More Information</h1>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button To Expand Options
+    </button>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            Here we have some hidden data to avoid cluttering the page with information
+        </div>
+    </div>
+
+    <!-- This example is using what is called an accordian, this is one of three examples
+    https://getbootstrap.com/docs/5.0/components/accordion/
+    -->
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">I can put information in this area</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">I can put information in this area</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">I can place information in this area</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- here we input our javascript helper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
