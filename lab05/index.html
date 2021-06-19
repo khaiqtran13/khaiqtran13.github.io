@@ -15,41 +15,50 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="scripts/date_picker.js"></script>
     <script src="scripts/payment.js"></script>
+    <script>
+            function myMap() {
+            var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+    </script>
+
 </head>
 <body>
 
 <div class = "container-lg">
-    
     <nav class="topnav">
         <h1><img src="images/gucci_logo.jpeg" width="180" height="130">Welcome to Fyzio Klinique</h1>
     </nav>
-
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#book-an-appointment">Book an Appointment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#meet-the-physicians">Physicians</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#contact-us">Contact Us</a>
-                </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-
+    <div class="sticky">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" width=100% height=100%>
+            <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#services"><img src="images/icons8-list-64.png" width="25px"> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#book-an-appointment"><img src="images/icons8-planner-100.png" width="25px"> Book an Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#meet-the-physicians"><img src="images/icons8-medical-doctor-50.png" width="25px"> Physicians</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#contact-us"><img src="images/icons8-connect-50.png" width="25px"> Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
     <!-- COVID ALERT -->
+    <br>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <h1>Attention!</h1>
+        <h1><img src="images/icons8-spam-16.png" alt="attention" width="50px"> Attention!</h1>
         For the time being, our capacity is limited to 15% due to COVID-19 restrictions<br>
         <a href="https://covid-19.ontario.ca/public-health-measures" target="_blank"><br>Find out more</a>
         <br><br><strong>ESSKEETITTTT</strong>
@@ -67,16 +76,17 @@
         <a href= "https://www.google.com/maps/dir/45.3845979,-75.6985622/mcdonalds+fallowfield/@45.3433203,-75.7789201,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x4ccdfd6b5127927b:0x90f381f72e24a5eb!2m2!1d-75.7329716!2d45.2974351" target="_blank">
         Get directions!</a><br>
     </p>
-    </div><br><br><br>
+    </div><br><br>
 
     <!-- SERVICES TABLE -->
     <section id="services">
+    <h1><img src="images/arrow-right.png" width=50px> Services</h1>
     <table class="table table-info table-hover">
         <thead>
             <tr>
-                <th scope="col"><h2>Service</h2></th>
-                <th scope="col"><h2>Description</h2></th>
-                <th scope="col"><h2>Price</h2></th>
+                <th scope="col"><h4>Service</h4></th>
+                <th scope="col"><h4>Description</h4></th>
+                <th scope="col"><h4>Price</h4></th>
             </tr>
         </thead>
         <tbody>
@@ -122,30 +132,30 @@
                 <td>$65 per session</td>
             </tr>
         </tbody>
-    </table><br><br><br>
+    </table><br><br>
     </section>
 
     <!-- BOOK AN APPOINTMENT -->
     <section id="book-an-appointment">
-    <h1>Book an Appointment</h1>
+    <h1><img src="images/arrow-right.png" width=50px> Book an Appointment</h1>
     <form>
         <div class="book-sess">
             <div class="form-row">
                 <div class="row">
                     <div class="col">
                         <label for="enterFirstName">First Name</label>
-                        <input type="text" class="form-control" placeholder="First name" required>
+                        <input type="text" class="form-control" placeholder="First name" tabindex="1" required>
                         <br>
                         <label for="enterNumber">Phone Number</label>
-                        <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" required>
+                        <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" tabindex="3" required>
                         <br>
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="text" class="form-control" id="my_date_picker">
+                            <input type="text" class="form-control" id="my_date_picker" tabindex="5">
                         </div>
                         <br>
                         <label class="control-label" for="service">Service Selection</label>
-                        <select id="service-selection" class="form-control">
+                        <select id="service-selection" class="form-control"  tabindex="7">
                             <option value="annual-physicals">Annual Physicals</option>
                             <option value="lab-testing">Labatory Testing</option>
                             <option value="covid-vaccination">COVID-19 Vaccination</option>
@@ -156,15 +166,15 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label for="enterFirstName">First Name</label>
-                        <input type="text" class="form-control" placeholder="Last name" required>
+                        <label for="enterLastName">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name" tabindex="2" required>
                         <br>
                         <label for="enterEmailAddress">Email</label>
-                        <input type="email" class="form-control" id="userEmail" placeholder="Enter email address" required>
+                        <input type="email" class="form-control" id="userEmail" placeholder="Enter email address" tabindex="4" required>
                         <br>
                             <div class="form-group">
                                 <label class="control-label" for="time">Time Slot</label>
-                                <select id="time" class="form-control">
+                                <select id="time" class="form-control" tabindex="6">
                                     <option value="10-11">10:00 - 11:00</option>
                                     <option value="1-2">13:00 - 14:00</option>
                                     <option value="2-3">14:00 - 15:00</option>
@@ -174,7 +184,7 @@
                         <br>
                             <div class="form-group">
                                 <label class="control-label" for="physician">Physician Preference</label>
-                                <select id="physician-choice" class="form-control">
+                                <select id="physician-choice" class="form-control" tabindex="8">
                                     <option value="ryder-balmes">Dr. Ryder Balmes</option>
                                     <option value="caitlyn-lieder">Dr. Caitlyn Lieder</option>
                                     <option value="lilpump">lil pump</option>
@@ -182,7 +192,7 @@
                             </div>
                     </div>
                     <p><br></p>
-                    <div id="flip"><h4>Enter Payment Information</h4></div>
+                    <div id="flip"><h4 align="left"><img width=100px src="images/secure-payment.jpeg">Secure Payment Entry<img src="images/arrow-down.png" width="50px" align=right></h4></div>
                     <div id="panel">
                         <div class="row">
                             <div class="col">
@@ -197,6 +207,9 @@
                                 <label class="control-label" for="card-cvc">CVC</label>
                                 <input type="text" class="form-control" id="card-cvc" placeholder="xxx" required>
                             </div>
+                            <div class="col">
+                                <img src="images/paypal.png" height=150px>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -207,12 +220,12 @@
         <input class="btn btn-primary" type="reset" value="Reset">
         <input class="btn btn-primary" type="submit" value="Submit">
 
-    </form><br><br><br>
+    </form><br><br>
     </section>
 
     <!-- PHYSICAN DESCRIPTIONS (w/ cards) -->
     <section id="meet-the-physicians">
-    <h1>Meet the Physicians!</h1>
+    <h1><img src="images/arrow-right.png" width=50px> Meet the Physicians!</h1>
     <div class="row justify-content-around">
         <div class="card" style="width: 18rem;">
             <img src="images/theexaminer.jpeg" class="card-img-top" alt="...">
@@ -238,12 +251,16 @@
                 dropping out of Hardvard Medical School in 2017. <STRONG>ESSKEETITTTT</STRONG>
             </p>
         </div>
-    </div><br><br><br>
+    </div><br><br>
     </section>
 
     <!-- CONTACT US -->
     <section id="contact-us">
-    <h1>Contact us</h1>
+    <h1><img src="images/arrow-right.png" width=50px> Contact us</h1>
+        <!-- Bootstrap -->
+        <div id="map-container-google-2" class="z-depth-1-half map-container">
+            <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=3340%20Fallowfield%20Rd,%20Nepean,%20ON%20K2J%205L1+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="height:400px;width:100%;" allowfullscreen></iframe>
+        </div>
         <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
@@ -276,7 +293,7 @@
             </div>
         </div>
     </div>    
-    </section><br><br><br>
+    </section><br><br>
 
 </div>
 
