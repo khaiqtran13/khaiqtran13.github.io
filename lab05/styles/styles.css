@@ -65,6 +65,7 @@ apple-pay-button {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
+  z-index: 10;
 }
 
 .map-container-2{
