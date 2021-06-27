@@ -82,3 +82,8 @@ apple-pay-button {
   width:100%;
   position:absolute;
 }
+/* disables weekends by not showing them */
+/* th.ui-datepicker-week-end,
+td.ui-datepicker-week-end {
+    display: none;
+} */

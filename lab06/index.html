@@ -1,9 +1,4 @@
 <!-- The lab template made by Ryan Matte is used -->
-<!-- TO DO:
-
-    MAKE SPECIFIC AVAILABILITY FOR EACH EXPERT
-
--->
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,7 +23,7 @@
             var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
             }
     </script>
-    
+    <script src="scripts/test_script.js"></script>
     <script src="scripts/payment.js"></script>
 
 </head>
@@ -67,7 +62,7 @@
         <h1> About us</h1>
         <p style="font-size: 25px">Fyzio Klinque is a physiotherapy clinic located in Ottawa, Ontario</p>
         <p>The goal of Fyzio Klinque is to provide the absolute best care and service to our customers.
-        Come visit the Fyzio Klinique and find out why our patients never have to return!<br>
+        Come visit the Fyzio Klinique and find out why our patients never have to return!<br><br>
         <address>
             <strong>Fyzio Klinique</strong><br>
             3340 Fallowfield Road<br>
@@ -135,7 +130,7 @@
         </tbody>
     </table><br><br>
     </section>
-
+    
     <!-- COVID ALERT -->
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <h1><img src="images/icons8-spam-16.png" alt="attention" width="50px"> Attention!</h1>
@@ -193,7 +188,8 @@
                         <br>
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="text" class="form-control" id="my_date_picker" tabindex="5">
+                            <input type="text" placeholder="mm/dd/yyyy" class="form-control" id="my_date_picker" tabindex="5" autocomplete="off" onclick="updateDatePicker()">
+            
                         </div>
                         <br>
                         <label class="control-label" for="service">Service Selection</label>
@@ -226,7 +222,7 @@
                         <br>
                             <div class="form-group">
                                 <label class="control-label" for="physician">Physician Preference</label>
-                                <select id="physician-choice" class="form-control" tabindex="8">
+                                <select id="physician-choice" class="form-control" tabindex="8" onchange="updatePhysician()">
                                     <option value="ryder-balmes">Dr. Ryder Balmes</option>
                                     <option value="caitlyn-lieder">Dr. Caitlyn Lieder</option>
                                     <option value="lilpump">lil pump</option>
@@ -265,7 +261,7 @@
         <br>
         
         <input class="btn btn-primary" type="reset" value="Reset" id="reset" tabindex="13" style="background-color: rgb(232, 75, 75) !important;">
-        <button class="btn btn-primary" type="submit" tabindex="14" value="Submit" onclick="alert('Thank you for choosing Fyzik Klinique!\nWe kindly ask you double check if your entry was valid')">Submit</button>
+        <button class="btn btn-primary" type="submit" tabindex="14" value="Submit" onclick="alert('Thank you for choosing Fyzik Klinique!\nWe kindly ask you double check if your entry was valid by referring to the tool tips')">Submit</button>
 
     </form><br><br>
     </section>
@@ -277,7 +273,8 @@
         <p>
             Telephone: <a href="tel: 0">(613) 420-6969<br></a>
             Fax: <a href="tel: 0">(613) 420-9696<br></a>
-            Email: <a href="mailto:#">fyzioklinque@guccigang.com</a>
+            Email: <a href="mailto:#">fyzioklinque@guccigang.com</a><br>
+            Mon-Fri: <strong>9:30-16:30</strong>
         </p>
         <!-- Bootstrap -->
         <div id="map-container-google-2" class="z-depth-1-half map-container">
