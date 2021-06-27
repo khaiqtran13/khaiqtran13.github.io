@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="scripts/date_picker.js"></script>
+    <script src="scripts/payment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
     <script>
             function myMap() {
@@ -23,9 +24,6 @@
             var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
             }
     </script>
-    <script src="scripts/test_script.js"></script>
-    <script src="scripts/payment.js"></script>
-
 </head>
 <body>
 
@@ -222,7 +220,8 @@
                         <br>
                             <div class="form-group">
                                 <label class="control-label" for="physician">Physician Preference</label>
-                                <select id="physician-choice" class="form-control" tabindex="8" onchange="updatePhysician()">
+                                <select id="physician-choice" class="form-control" tabindex="8">
+                                    <option value=""></option>
                                     <option value="ryder-balmes">Dr. Ryder Balmes</option>
                                     <option value="caitlyn-lieder">Dr. Caitlyn Lieder</option>
                                     <option value="lilpump">lil pump</option>
