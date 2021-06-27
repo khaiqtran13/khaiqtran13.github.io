@@ -184,14 +184,8 @@
                         <label for="enterNumber">Phone Number</label>
                         <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" tabindex="3" required>
                         <br>
-                        <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="text" placeholder="mm/dd/yyyy" class="form-control" id="my_date_picker" tabindex="5" autocomplete="off" onclick="updateDatePicker()">
-            
-                        </div>
-                        <br>
                         <label class="control-label" for="service">Service Selection</label>
-                        <select id="service-selection" class="form-control"  tabindex="7">
+                        <select id="service-selection" class="form-control"  tabindex="5">
                             <option value="annual-physicals">Annual Physicals</option>
                             <option value="lab-testing">Labatory Testing</option>
                             <option value="covid-vaccination">COVID-19 Vaccination</option>
@@ -200,6 +194,11 @@
                             <option value="foot-orthotics">Foot Orthotics</option>
                             <option value="rom">ROM Excercise Session</option>
                         </select>
+                        <br>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="text" placeholder="mm/dd/yyyy" class="form-control" id="my_date_picker" tabindex="7" autocomplete="off" onclick="updateDatePicker()">            
+                        </div>
                     </div>
                     <div class="col">
                         <label for="enterLastName">Last Name</label>
@@ -208,25 +207,25 @@
                         <label for="enterEmailAddress">Email</label>
                         <input type="email" class="form-control" id="userEmail" placeholder="Enter email address" tabindex="4" required>
                         <br>
-                            <div class="form-group">
-                                <label class="control-label" for="time">Time Slot</label>
-                                <select id="time" class="form-control" tabindex="6">
-                                    <option value="10-11">10:00 - 11:00</option>
-                                    <option value="1-2">13:00 - 14:00</option>
-                                    <option value="2-3">14:00 - 15:00</option>
-                                    <option value="3-4">15:00 - 16:00</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                        <label class="control-label" for="physician">Physician Preference</label>
+                        <select id="physician-choice" class="form-control" tabindex="6">
+                            <option value=""></option>
+                            <option value="ryder-balmes">Dr. Ryder Balmes</option>
+                            <option value="caitlyn-lieder">Dr. Caitlyn Lieder</option>
+                            <option value="lilpump">lil pump</option>
+                        </select>
+                        </div>
                         <br>
-                            <div class="form-group">
-                                <label class="control-label" for="physician">Physician Preference</label>
-                                <select id="physician-choice" class="form-control" tabindex="8">
-                                    <option value=""></option>
-                                    <option value="ryder-balmes">Dr. Ryder Balmes</option>
-                                    <option value="caitlyn-lieder">Dr. Caitlyn Lieder</option>
-                                    <option value="lilpump">lil pump</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label class="control-label" for="time">Time Slot</label>
+                            <select id="time" class="form-control" tabindex="8">
+                                <option value="10-11">10:00 - 11:00</option>
+                                <option value="1-2">13:00 - 14:00</option>
+                                <option value="2-3">14:00 - 15:00</option>
+                                <option value="3-4">15:00 - 16:00</option>
+                            </select>
+                        </div>                        
                     </div>
                     <p><br></p>
                     <!-- payment validation is using jquery -->
