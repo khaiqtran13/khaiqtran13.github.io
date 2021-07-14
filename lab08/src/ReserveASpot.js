@@ -1,23 +1,32 @@
+import DatePicker from 'react-date-picker';
+import TimePicker from 'react-time-picker';
+
 const ReserveASpot = () => {
     return (
         <div id="reserve-a-spot" className="tabcontent">
-            <h1>Reserve a Spot</h1>
-            <div className="form-row">
-                <div className="row">
-                    <label for="enterFirstName">First Name</label>
-                    <input type="text" class="form-control" placeholder="John" required></input>
-                    <label for="enterLastName">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last name" required></input>
-                    <label for="enterEmailAddress">Email</label>
-                    <input type="email" class="form-control" id="userEmail" placeholder="abc@gmail.com" required></input>
-                    <label for="enterNumber">Phone Number</label>
-                    <input type="phoneNumber" class="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" required></input>
-                    <label for="date">Date</label>
-                    <input type="text" placeholder="mm/dd/yyyy"></input> 
+            <h2>Reserve a Spot</h2>
+
+                <div className="form-row">
+                    {/* noValidate */}
+                    <form className="row g-2 needs-validation"> 
+                        <label for="enterFirstName">First Name</label>
+                        <input type="text" className="form-control" id="validationTooltip01" placeholder="John" required></input>
+                        <label for="enterLastName">Last Name</label>
+                        <input type="text" className="form-control" placeholder="Doe" required></input>
+                        <label for="enterEmailAddress">Email</label>
+                        <input type="email" className="form-control" id="userEmail" placeholder="abc@gmail.com" required></input>
+                        <label for="enterNumber">Phone Number</label>
+                        <input type="phoneNumber" className="form-control" id="userPhoneNumber" placeholder="1 (xxx) xxx-xxxx" required></input>
+                        <label for="date">Date</label>
+                        {/* <input type="text" className="form-control" placeholder="mm/dd/yyyy"></input>  */}
+                        <DatePicker />
+                        <button className="btn btn-primary" type="submit">Submit</button>   
+                        
+                    </form>
                 </div>
-            </div>
         </div>
     );
 }
- 
+
+
 export default ReserveASpot;

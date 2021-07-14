@@ -1,7 +1,7 @@
 const ContactUs = () => {
     return (
         <div className="contact-us">
-            <h1>Contact Us</h1>
+            <h2>Contact Us</h2>
             <p>
                 Telephone: <a href="tel: 0">(613) 420-6969<br /></a>
                 Fax: <a href="tel: 0">(613) 420-9696<br /></a>

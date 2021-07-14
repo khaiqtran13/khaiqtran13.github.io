@@ -87,3 +87,13 @@ code {
   }
 }
 
+th {
+  color: #2596be;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  
+}tr:hover {box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.181); border-radius: 5px;}
