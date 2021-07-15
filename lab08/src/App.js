@@ -1,28 +1,19 @@
 import React from 'react';
 import Tabs from './Tabs';
-import ContactUs from './ContactUs';
-import ReserveASpot from './ReserveASpot';
-import Home from './Home';
-import LearnMore from './LearnMore';
+import EnglishVersion from './EnglishVersion';
+import FrenchVersion from './FrenchVersion';
 
 function App() {
   return (
     <div className="content-area">
-      <div className="company-name"><h1 style={{fontSize: "70px"}}>613 Pools</h1></div>
       <Tabs>
-        <div label="Home">
-          <Home />
+        <div label="English" className="locale">
+          <EnglishVersion />
         </div>
-        <div label="Reserve a Spot"> 
-          <ReserveASpot />
+        <div label="French" className="locale">
+          <FrenchVersion />
         </div>
-        <div label="Learn More">
-          <LearnMore />  
-        </div> 
-        <div label="Contact Us"> 
-          <ContactUs />
-        </div> 
-      </Tabs> 
+      </Tabs>
     </div>
   );
 }

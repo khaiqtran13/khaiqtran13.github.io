@@ -19,11 +19,13 @@ code {
     monospace;
 }
 
+
 .tab-list {
   border-bottom: 1px solid #ccc;
   padding-bottom: 25px;
   padding-left: 0;
 }
+
 
 .tab-list-item {
   display: inline-block;
@@ -97,3 +99,7 @@ th, td {
   border-bottom: 1px solid #ddd;
   
 }tr:hover {box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.181); border-radius: 5px;}
+
+.image{
+  height: 50px;
+}
