@@ -1,9 +1,9 @@
-import aboutus_icon from './images/aboutus.jpeg'
 
+import aboutus_icon from './images/aboutus.jpeg'
 const Home = () => {
     return (
         <div className="home">
-            <div style={{display: 'inline-block'}}>
+            <div style={{display: "flex"}}>
                 <img src={aboutus_icon} className="image"/><h2>About Us</h2>
             </div>
             <p>

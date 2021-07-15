@@ -6,14 +6,19 @@ import courses_icon from './images/courses.jpeg';
 const LearnMore = () => {
     return (
         <div className="learn-more">
-            <img src={swim_icon} className="image" /> 
-            <h2>Types of Swims</h2>
+            <div style={{display: "flex"}}>
+                <img src={swim_icon} className="image" /> 
+                <h2>Types of Swims</h2>
+            </div>
+            
             <p>
                 <h6>Lane Swims:</h6> The 50m pool is split into 10 lanes (each 2.5 m) with a maximum 4 people per lane. Lane Swims are best for atheletes training strokes. <br /><br />
                 <h6>Leisure Swim:</h6> The 50m is split into two 25m pools with a maximum of 25 people per pool (50 total). Leisure Swims are best for water activities and non-lap training.
             </p>
-            <img src={cost_icon} className="image" />
-            <h2>Costs</h2>
+            <div style={{display: "flex"}}>
+                <img src={cost_icon} className="image" />
+                <h2>Costs</h2>
+            </div>
             <table>
                 <tr>
                     <th>Age</th>
@@ -32,8 +37,10 @@ const LearnMore = () => {
                     <td>4.50</td>
                 </tr>
             </table><br />
-            <img src={specs_icon} className="image"/>
-            <h2>Pool Specifications</h2>
+            <div style={{display: "flex"}}>
+                <img src={specs_icon} className="image"/>
+                <h2>Pool Specifications</h2>
+            </div>
             <p>
                 613 Pools meets the Federation Inernationale de Natation regulations and can be used to host Olympic events.
                 <br /><br /><strong>Measurements:</strong>
@@ -42,8 +49,10 @@ const LearnMore = () => {
                 <br />depth: 6 metres (6 ft)
                 <br />lane width: 2.5 metres
             </p>
-            <img src={courses_icon} className="image" />
-            <h2>Courses</h2>
+            <div style={{display: "flex"}}>
+                <img src={courses_icon} className="image" />
+                <h2>Courses</h2>
+            </div>
             <p>
                 <h6>613 Pools offers a the standard swimming courses and lifesaving courses.</h6><br />
                 Red Cross swim kids courses are offered please refer <a href="https://join.ottawa.ca/swimming/" target="_blank" rel="noreferrer">here</a> for more information.<br /><br />

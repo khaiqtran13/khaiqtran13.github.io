@@ -3,8 +3,10 @@ import contact_icon from './images/contact.png';
 const ContactUs = () => {
     return (
         <div className="contact-us">
-            <img src={contact_icon} className="image"/>
-            <h2>Contact Us</h2>
+            <div style={{display: "flex"}}>
+                <img src={contact_icon} className="image"/>
+                <h2>Contact Us</h2>
+            </div>
             <p>
                 Telephone: <a href="tel: 0">(613) 420-6969<br /></a>
                 Email: <a href="mailto:#">613pools@ottawa.com</a><br />

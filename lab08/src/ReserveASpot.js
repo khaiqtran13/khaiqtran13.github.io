@@ -12,7 +12,7 @@ class AllowOnlyNumber extends Component {
             regexp : /^[0-9\b]+$/
         }   
     }
-    
+
     onHandleTelephoneChange = e => {
         let telephone = e.target.value;
 
@@ -69,8 +69,9 @@ const ReserveASpot = () => {
 
     return (
         <div id="reserve-a-spot" className="tabcontent">
-            <img src={reserve_icon} className="image"/>
-            <h2>Reserve a Spot</h2>
+            <div style={{display: "flex"}}>
+                <img src={reserve_icon} className="image"/><h2>Reserve a Spot</h2>
+            </div>
                 <div className="form-row">
                     <form className="row g-2 needs-validation"> 
                         <label for="enterFirstName">First Name</label>

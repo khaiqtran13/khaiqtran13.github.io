@@ -10,7 +10,7 @@ function App() {
         <div label="English" className="locale">
           <EnglishVersion />
         </div>
-        <div label="French" className="locale">
+        <div label="Français" className="locale">
           <FrenchVersion />
         </div>
       </Tabs>

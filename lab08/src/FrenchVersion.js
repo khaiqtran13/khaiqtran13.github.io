@@ -8,7 +8,7 @@ import LearnMoreFr from './LearnMoreFr';
 const FrenchVersion = () => {
     return (  
         <div className="fran">
-            <div className="company-name"><h1 style={{fontSize: "70px"}}>Piscene 613</h1></div>
+            <div className="company-name"><h1 style={{fontSize: "70px"}}>Piscine 613</h1></div>
             <Tabs>
                 <div label="Accueil">
                     <HomeFr />
