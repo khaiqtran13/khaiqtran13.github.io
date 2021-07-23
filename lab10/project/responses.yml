@@ -1,0 +1,63 @@
+responses:
+    utter_greet:
+    - text: |
+        Hello! How can I help you?
+    - text: |
+        Hi!
+
+    utter_ask_email:
+    - text: |
+        What is your email address?
+
+    utter_subscribed:
+    - text: |
+        Check your inbox at {email} in order to finish subscribing to the newsletter!
+    - text: |
+        You're all set! Check your inbox at {email} to confirm your subscription.
+
+    utter_unsubscribe:
+    - text: |
+        You're all set! Your email has been removed from the newsletter!
+    - text: |
+        Success! You will no longer recieve the newsletter!
+
+    utter_why:
+    - text: |
+        May I ask you why you wish to unsubscribe?
+    - text: |
+        What are your reasons for unsubscribing?
+    - text: |
+        Why do did you unsubscribe?
+    - text: |
+        Can you provide us reasons for unsubscribing?
+
+    utter_explain:
+    - text: |
+        We are sad to see you go
+    - text: |
+        We understand
+    - text: |
+        That is no problem
+    - text: |
+        That is a fair reason
+        
+    utter_thank:
+    - text: |
+        I gotchu
+    - text: |
+        No worries
+    - text: |
+        Only for the homies
+    - text: |
+        You're welcome!
+
+    utter_bye:
+    - text: |
+        Goodbye!
+    - text: |
+        One time
+    - text: |
+        Peace
+    - text: |
+        See ya later aligator
+
