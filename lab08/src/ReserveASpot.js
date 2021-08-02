@@ -39,6 +39,7 @@ class AllowOnlyNumber extends Component {
 
 const ReserveASpot = () => {
     const [selected, setSelected] = React.useState(""); 
+    
     // function will set different values to state variable based on dropdown
     const changeSelectOptionHandler = (event) => {
         setSelected(event.target.value);
