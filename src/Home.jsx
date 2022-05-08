@@ -27,10 +27,10 @@ export const Home = () => {
           <a href="https://www.linkedin.com/in/khai-tran-9a2799196/" target="">
             <img src={LinkedInIcon} />
           </a>
-          <a href="https://github.com/khaiqtran13" target="">
+          <a href="https://github.com/khaiqtran13" target="_blank">
             <img src={GitHubIcon} />
           </a>
-          <a href="https://github.com/khaiqtran13/resume" target="">
+          <a href="https:khaiqtran13.github.io/resume" target="_blank">
             <img src={resumeIcon} />
           </a>
         </div>
