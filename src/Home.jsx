@@ -4,18 +4,25 @@ import LinkedInIcon from "./linkedin.png";
 import GitHubIcon from "./github.png";
 import resumeIcon from "./resume.png";
 import styled, { keyframes } from "styled-components";
-import { bounce } from "react-animations";
-
+import { bounce, tada } from "react-animations";
+import ArrowDown from "./arrow-down.png";
 export const Home = () => {
   const bounceAnimation = keyframes`${bounce}`;
+  const pulseAnimation = keyframes`${tada}`;
 
   const BouncyDiv = styled.div`
     animation: 2s ${bounceAnimation};
     animation-delay: 4s;
   `;
 
+  const PulseDiv = styled.div`
+    animation: 3s ${pulseAnimation};
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+  `;
+
   return (
-    <div className="h-screen bg-black flex flex-col justify-center">
+    <div className="flex justify-center flex-col h-screen bg-black">
       <div className="mx-auto" style={{ width: "690px" }}>
         <p className="pb-4 text-6xl">Khai Tran</p>
         <div style={{ width: "420px" }}>
@@ -33,7 +40,10 @@ export const Home = () => {
           />
         </div>
         <BouncyDiv className="flex space-x-2">
-          <a href="https://www.linkedin.com/in/khai-tran-9a2799196/" target="">
+          <a
+            href="https://www.linkedin.com/in/khai-tran-9a2799196/"
+            target="_blank"
+          >
             <img src={LinkedInIcon} />
           </a>
           <a href="https://github.com/khaiqtran13" target="_blank">
@@ -46,6 +56,9 @@ export const Home = () => {
             <img src={resumeIcon} />
           </a>
         </BouncyDiv>
+      </div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0">
+        <img src={ArrowDown} className="" />
       </div>
     </div>
   );
