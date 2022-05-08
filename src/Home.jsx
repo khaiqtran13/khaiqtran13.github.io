@@ -30,7 +30,10 @@ export const Home = () => {
           <a href="https://github.com/khaiqtran13" target="_blank">
             <img src={GitHubIcon} />
           </a>
-          <a href="https:khaiqtran13.github.io/resume" target="_blank">
+          <a
+            href="https://drive.google.com/file/d/1JVSY2eKG4zkF7jIOGt2gpNzNMwIqRooj/view?usp=sharing"
+            target="_blank"
+          >
             <img src={resumeIcon} />
           </a>
         </div>
