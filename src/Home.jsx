@@ -20,6 +20,7 @@ export const Home = () => {
         animation-iteration-count: infinite;
         animation-delay: 5s;
     `;
+    const viewportHeight = window.innerHeight;
 
     return (
         <div className="relative flex justify-center flex-col h-screen bg-black">
@@ -66,7 +67,13 @@ export const Home = () => {
                 </BouncyDiv>
             </div>
             <div className="absolute bottom-5 flex justify-center w-full">
-                <PulseDiv className="flex flex-col justify-center">
+                <PulseDiv
+                    className="flex flex-col justify-center"
+                    onClick={() => {
+                        window.scrollBy(0, viewportHeight);
+                    }}
+                    // use react-scroller
+                >
                     {/* <p className="text-sm">about me</p> */}
                     <img src={ArrowDown} className="h-16" alt={"arrow down"} />
                 </PulseDiv>
