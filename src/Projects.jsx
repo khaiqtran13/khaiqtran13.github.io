@@ -1,23 +1,34 @@
 import React from "react";
 import handleViewport from "react-in-viewport";
-import { useSpring, animated, useTrail, useTransition } from "react-spring";
+import { useSpring, animated, useTrail } from "react-spring";
 export const Projects = () => {
+    const viewportWidth = window.innerWidth;
+
     // add arrow emoji?
     const items = ["About Me", "Languages", "Technologies", "Projects"];
-    const config = { mass: 10, tension: 2000, friction: 200 };
+    const trailConfig = { mass: 10, tension: 2000, friction: 200 };
+
+    //
+    const [flip, setFlip] = React.useState(true);
+    const props = useSpring({
+        to: { transform: `translateX(${viewportWidth / 4}px)`, opacity: 1 },
+        from: { transform: "translateX(0px)", opacity: 1 },
+        reset: true,
+        reverse: flip,
+        // delay: 250,
+        // onRest: () => setFlip(!flip),
+    });
 
     //   block
     const [toggle, setToggle] = React.useState(false);
-    const [toggleLeft, setToggleLeft] = React.useState(false);
 
     const trail = useTrail(items.length, {
-        config,
+        trailConfig,
         opacity: toggle ? 1 : 0,
         x: toggle ? 0 : 20,
         from: { opacity: 0, height: -20 },
-        transform: toggleLeft ? "translateX(25px)" : "",
     });
-
+    console.log("vp:", viewportWidth);
     const TrailingBlock = (props) => {
         const { forwardedRef } = props;
         return (
@@ -34,18 +45,10 @@ export const Projects = () => {
                                 ),
                             }}
                         >
-                            <animated.div
-                                className="bg-white rounded-md h-fit p-2 my-4 hover:shadow-xl hover:bg-slate-100 hover:scale-125 hover:text-indigo-600"
-                                style={{
-                                    transform: toggleLeft
-                                        ? "translateX(-100px)"
-                                        : "",
-                                }}
-                            >
+                            <animated.div className="bg-white rounded-md h-fit p-2 my-4 hover:shadow-xl hover:bg-slate-100 hover:text-indigo-600">
                                 <div
                                     onClick={() => {
-                                        setToggleLeft(!toggleLeft);
-                                        console.log(toggleLeft);
+                                        setFlip(!flip);
                                     }}
                                 >
                                     {items[index]}
@@ -55,7 +58,6 @@ export const Projects = () => {
                         </animated.div>
                     ))}
                 </div>
-                {toggleLeft && <div className="bg-white h-10 w-10"></div>}
             </div>
         );
     };
@@ -63,12 +65,24 @@ export const Projects = () => {
     const ViewportBlockTrailing = handleViewport(TrailingBlock);
 
     return (
-        <div className="h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex flex-col justify-center">
-            <div className="mx-auto lg:w-96">
-                <ViewportBlockTrailing
-                    onEnterViewport={() => setToggle(true)}
-                    onLeaveViewport={() => setToggle(false)}
-                />
+        <div className="h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex justify-center">
+            <div className="flex flex-col justify-center">
+                <div className="flex">
+                    {/* {!flip && ( */}
+                    <div className="p-4 bg-white rounded-lg shadow-lg h-96 m-4">
+                        <p className="text-xl text-indigo-500">Title</p>
+                        <p className="text-indigo-500">Title</p>
+                    </div>
+                    {/* )} */}
+                    <div className="w-full">
+                        <animated.div className="overflow-hidden" style={props}>
+                            <ViewportBlockTrailing
+                                onEnterViewport={() => setToggle(true)}
+                                onLeaveViewport={() => setToggle(false)}
+                            />
+                        </animated.div>
+                    </div>
+                </div>
             </div>
         </div>
     );
