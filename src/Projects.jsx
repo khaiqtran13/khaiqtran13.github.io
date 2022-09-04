@@ -3,13 +3,13 @@ import { FaLink, FaCode } from "react-icons/fa";
 
 export const Projects = () => {
   const Card = ({ title, subtitle, link, repo, tech }) => (
-    <div className="justify-between glass p-3 m-2 md:w-[690px] h-[210px]">
+    <div className="justify-between glass p-3 m-2 md:w-[690px] md:h-[210px] h-[320px]">
       <div className="ml-5 mr-2 grid grid-cols-6 h-full">
-        <div className="flex flex-col col-span-5">
+        <div className="flex flex-col md:col-span-5 col-span-full">
           <h3 className="mt-2 text-white text-3xl font-semibold">{title}</h3>
           <p className="mt-1 text-white text-sm text-light">{subtitle}</p>
         </div>
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col justify-center h-full md:col-span-1 col-span-2">
           <div className="space-x-2">
             {link && (
               <a
@@ -45,7 +45,7 @@ export const Projects = () => {
   );
 
   return (
-    <div className="h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex justify-center">
+    <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex justify-center">
       <div className="flex flex-wrap max-w-3/4 justify-center h-fit">
         <Card
           title="CoverMe"
