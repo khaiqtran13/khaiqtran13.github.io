@@ -37,7 +37,7 @@ export const Projects = () => {
             )}
           </div>
         </div>
-        <div>
+        <div className="col-span-full">
           <p className="text-sm text-light">{tech}</p>
         </div>
       </div>
@@ -49,7 +49,7 @@ export const Projects = () => {
       <div className="flex flex-wrap max-w-3/4 justify-center h-fit">
         <Card
           title="CoverMe"
-          tech="Rea"
+          tech="React, Node, Express, MongoDB, Typescript, Heroku"
           link="https://shift-replacement-finder.herokuapp.com/"
           subtitle="In a single intuitive mobile app, easily post, cover, and keep track of your shifts.
         SRF is an app that helps employees find and keep track of replacements.
@@ -58,15 +58,25 @@ export const Projects = () => {
         />
         <Card
           title="Krypt"
+          subtitle="A web3 application connected to the Ethereum blockchain that connects users' wallets using MetaMask.
+            Users can send ETH to other wallets (on the Georli test network) with the interactions of smart contracts written in Solidity."
           link="https://khaiqtran13-krypt.netlify.app/"
           repo="https://github.com/khaiqtran13/krypt"
+          tech="React, Javascript, Solidity, Web3, Metamask, Netlify, Alchemy"
         />
         <Card
           title="OnBoardPlus"
+          subtitle="Onboard is an onscreen keyboard useful for everybody that cannot use a
+            hardware keyboard. OnBoardPlus is a forked version of OnBoard with emphasis 
+            on usability for mobility impaired users"
           repo="https://github.com/jakekellett/GNG-2101-Onboard"
+          tech="Python, Linux"
         />
         <Card
           title="Zombie Runner"
+          subtitle="3D video game created in Unity using C# scripting. This video game was created as an introduction to game development and object-oriented programming concepts.
+          The game has two levels: a maze running level and a zombie fighting level - give it a try 😀"
+          tech="Unity, C#"
           repo="https://github.com/kana2001/Zombie-Runner"
           link="https://simmer.io/@kana2001/zombie-runner"
         />
