@@ -24,7 +24,8 @@ export const Home = () => {
 
   return (
     <div className="relative flex justify-center flex-col h-screen bg-black">
-      <div className="absolute top-1/3 left-4 md:left-1/4 mx-auto h-16">
+      <div className="md:w-[65%] mx-auto h-16">
+        {/* <div className="absolute top-1/3 left-4 md:left-1/4 mx-auto h-16"> */}
         <p className="pb-6 text-6xl">Khai Tran</p>
         <div className="h-20">
           <div style={{ width: "360px" }}>
