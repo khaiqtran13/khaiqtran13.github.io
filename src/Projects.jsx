@@ -13,19 +13,19 @@ export const Projects = () => {
   const Card = ({ title, subtitle, link, repo, tech }) => (
     <div className="justify-between glass p-3 m-3 md:mx-0 md:h-[210px] h-[320px] shadow-2xl">
       <div className="ml-5 mr-2 grid grid-cols-6 h-full">
-        <div className="flex flex-col md:col-span-5 col-span-full">
+        <div className="flex flex-col md:col-span-5 col-span-full mr-4">
           <h3 className="mt-2 text-white text-3xl font-semibold">{title}</h3>
           <p className="mt-1 text-white text-sm text-light">{subtitle}</p>
         </div>
         <div className="flex flex-col justify-center h-full md:col-span-1 col-span-2">
           <div className="flex md:justify-center">
-            <div className="space-x-2">
+            <div className="flex">
               {link && (
                 <a
                   href={link}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-fit hover:scale-150"
+                  className="w-fit hover:scale-150 mr-2"
                 >
                   <button className="w-fit p-4 rounded-lg shadow-xl hover:scale-150 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
                     <FaLink />
@@ -37,7 +37,7 @@ export const Projects = () => {
                   href={repo}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-fit  hover:scale-125"
+                  className="w-fit hover:scale-125"
                 >
                   <button className="w-fit p-4 rounded-lg shadow-xl hover:scale-150 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
                     <FaCode />
@@ -121,18 +121,27 @@ export const Projects = () => {
             link="https://simmer.io/@kana2001/zombie-runner"
           />
         </div>
-        <div className="mx-3">
-          <div className="my-6 flex flex-wrap">
-            <p>Languages:</p>
-            {lang.map((title) => {
-              return <UIPill title={title} />;
-            })}
+        <div className="m-3 md:mx-0">
+          <p className="pb-6 text-6xl mx-auto mt-4 text-center">Skills</p>
+          <div className="glass2 rounded-lg p-2 my-3">
+            <div className="mx-2 flex flex-wrap">
+              <p className="font-semibold">Languages:</p>
+              <div className="flex flex-wrap">
+                {lang.map((title) => {
+                  return <UIPill title={title} />;
+                })}
+              </div>
+            </div>
           </div>
-          <div className="my-6 flex flex-wrap">
-            <p>Technologies:</p>
-            {tech.map((title) => {
-              return <UIPill title={title} />;
-            })}
+          <div className="glass2 rounded-lg p-2 my-3">
+            <div className="mx-2 flex flex-wrap">
+              <p className="font-semibold">Technologies:</p>
+              <div className="flex flex-wrap">
+                {tech.map((title) => {
+                  return <UIPill title={title} />;
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
