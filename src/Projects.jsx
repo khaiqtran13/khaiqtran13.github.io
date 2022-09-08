@@ -2,8 +2,16 @@ import React from "react";
 import { FaLink, FaCode } from "react-icons/fa";
 
 export const Projects = () => {
+  const UIPill = ({ title }) => {
+    return (
+      <div className="glass rounded-full text-white w-fit px-2 m-1 border-0">
+        {title}
+      </div>
+    );
+  };
+
   const Card = ({ title, subtitle, link, repo, tech }) => (
-    <div className="justify-between glass p-3 m-3 md:h-[210px] h-[320px] shadow-2xl">
+    <div className="justify-between glass p-3 m-3 md:mx-0 md:h-[210px] h-[320px] shadow-2xl">
       <div className="ml-5 mr-2 grid grid-cols-6 h-full">
         <div className="flex flex-col md:col-span-5 col-span-full">
           <h3 className="mt-2 text-white text-3xl font-semibold">{title}</h3>
@@ -46,6 +54,34 @@ export const Projects = () => {
     </div>
   );
 
+  const lang = [
+    "TypeScript / JavaScript",
+    "Python",
+    "Java",
+    "C",
+    "SQL",
+    "Solidity",
+    "HTML",
+    "CSS",
+  ];
+
+  const tech = [
+    "React",
+    "Redux",
+    "Node.js",
+    "Django",
+    "Tailwind CSS",
+    "Git",
+    "Gatsby",
+    "Figma",
+    "Segment",
+    "Firebase",
+    "Docker",
+    "Netlify",
+    "Apollo GraphQL",
+    "Postman",
+  ];
+
   return (
     <div className="flex-col bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex justify-center">
       <div className="md:max-w-[65%] mx-auto">
@@ -84,6 +120,20 @@ export const Projects = () => {
             repo="https://github.com/kana2001/Zombie-Runner"
             link="https://simmer.io/@kana2001/zombie-runner"
           />
+        </div>
+        <div className="mx-3">
+          <div className="my-6 flex flex-wrap">
+            <p>Languages:</p>
+            {lang.map((title) => {
+              return <UIPill title={title} />;
+            })}
+          </div>
+          <div className="my-6 flex flex-wrap">
+            <p>Technologies:</p>
+            {tech.map((title) => {
+              return <UIPill title={title} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
