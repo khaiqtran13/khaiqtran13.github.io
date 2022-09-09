@@ -5,7 +5,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 export const Projects = () => {
   const UIPill = ({ title }) => {
     return (
-      <div className="glass rounded-full text-white w-fit px-2 m-1 border-0 glow-on-hover">
+      <div className="glass rounded-full text-white w-fit px-2 m-1 border-0">
         {title}
       </div>
     );
