@@ -60,6 +60,7 @@ export const Projects = () => {
     "TypeScript / JavaScript",
     "Python",
     "Java",
+    "C++",
     "C",
     "SQL",
     "Solidity",
