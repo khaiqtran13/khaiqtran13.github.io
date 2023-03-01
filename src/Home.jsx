@@ -31,7 +31,7 @@ export const Home = () => {
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={["Third Year Software Engineering Student"]}
+              sequence={["Fourth Year Software Engineering Student"]}
             />
           </div>
           <div style={{ width: "360px" }}>
