@@ -57,7 +57,7 @@ export const Home = () => {
             <img src={GitHubIcon} />
           </a>
           <a
-            href="https://drive.google.com/file/d/1Qlgh-HP76wLMyazJWPcixmpm9gqpM205/view?usp=sharing"
+            href="https://drive.google.com/file/d/1IQcspui7uIMADVUh7w0NEuuanb5FQrKC/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
