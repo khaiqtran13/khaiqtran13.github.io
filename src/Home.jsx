@@ -31,13 +31,13 @@ export const Home = () => {
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={["Fourth Year Software Engineering Student"]}
+              sequence={["Fourth Year Software Engineering"]}
             />
           </div>
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[2500, " at the University of Ottawa"]}
+              sequence={[2500, "Student at the University of Ottawa"]}
             />
           </div>
         </div>
