@@ -40,12 +40,13 @@ export const Home = () => {
     animation-delay: 6.5s;
     animation-fill-mode: forwards;
   `;
-  // const viewportHeight = window.innerHeight;
 
   return (
-    <div className="relative flex justify-center flex-col h-screen bg-black">
-      <div className="md:w-[65%] mx-auto h-16">
-        {/* <div className="absolute top-1/3 left-4 md:left-1/4 mx-auto h-16"> */}
+    <div className="relative flex justify-center h-screen bg-black">
+      <div className="md:w-[65%] mx-auto absolute top-60">
+        <p className="text-sm text-indigo-200 mb-4">
+          Hey, welcome to my website. I'm
+        </p>
         <TitleDiv>
           <p className="pb-6 text-6xl">Khai Tran</p>
         </TitleDiv>
@@ -53,7 +54,7 @@ export const Home = () => {
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[1000, "Upcoming SWE Graduate"]}
+              sequence={[1000, "An upcoming SWE Graduate"]}
             />
           </div>
           <div style={{ width: "360px" }}>
