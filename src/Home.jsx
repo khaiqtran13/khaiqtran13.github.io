@@ -4,24 +4,41 @@ import LinkedInIcon from "./linkedin.png";
 import GitHubIcon from "./github.png";
 import resumeIcon from "./resume.png";
 import styled, { keyframes } from "styled-components";
-import { bounce, flash, fadeIn } from "react-animations";
+import { fadeIn, bounceInRight } from "react-animations";
 export const Home = () => {
-  const bounceAnimation = keyframes`${bounce}`;
   const animation = keyframes`${fadeIn}`;
 
-  const BouncyDiv = styled.div`
-    animation: 2s ${bounceAnimation};
-    animation-delay: 4s;
-  `;
+  const logoAnimation = keyframes`to {opacity: 1}${bounceInRight}`;
 
-  const PulseDiv = styled.div`
-    animation: 5s ${animation};
-    animation-iteration-count: infinite;
-    animation-delay: 5s;
-  `;
+  // const PulseDiv = styled.div`
+  //   animation: 5s ${animation};
+  //   animation-iteration-count: infinite;
+  //   animation-delay: 5s;
+  // `;
 
   const TitleDiv = styled.div`
-    animation: 2s ${animation};
+    animation: 2.5s ${animation};
+  `;
+
+  const LinkedInDiv = styled.div`
+    animation: 2s ${logoAnimation};
+    animation-delay: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  `;
+
+  const GitHubDiv = styled.div`
+    opacity: 0;
+    animation: 2s ${logoAnimation};
+    animation-delay: 5.25s;
+    animation-fill-mode: forwards;
+  `;
+
+  const ResumeDiv = styled.div`
+    opacity: 0;
+    animation: 2s ${logoAnimation};
+    animation-delay: 6.5s;
+    animation-fill-mode: forwards;
   `;
   // const viewportHeight = window.innerHeight;
 
@@ -36,39 +53,45 @@ export const Home = () => {
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[800, "Upcoming SWE Graduate"]}
+              sequence={[1000, "Upcoming SWE Graduate"]}
             />
           </div>
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[2300, "at the University of Ottawa"]}
+              sequence={[2500, "at the University of Ottawa"]}
             />
           </div>
         </div>
-        <BouncyDiv className="ml-[-0.5rem] flex space-x-2">
-          <a
-            href="https://www.linkedin.com/in/khai-tran-9a2799196/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={LinkedInIcon} />
-          </a>
-          <a
-            href="https://github.com/khaiqtran13"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={GitHubIcon} />
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1IQcspui7uIMADVUh7w0NEuuanb5FQrKC/view?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={resumeIcon} alt={"resume"} />
-          </a>
-        </BouncyDiv>
+        <div className="flex">
+          <LinkedInDiv>
+            <a
+              href="https://www.linkedin.com/in/khai-tran-9a2799196/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={LinkedInIcon} alt="LinkedInIcon" />
+            </a>
+          </LinkedInDiv>
+          <GitHubDiv>
+            <a
+              href="https://github.com/khaiqtran13"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={GitHubIcon} alt="GitHubIcon" />
+            </a>
+          </GitHubDiv>
+          <ResumeDiv>
+            <a
+              href="https://drive.google.com/file/d/1IQcspui7uIMADVUh7w0NEuuanb5FQrKC/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={resumeIcon} alt={"resume"} />
+            </a>
+          </ResumeDiv>
+        </div>
       </div>
       <div className="absolute bottom-5 flex justify-center w-full">
         {/* <PulseDiv
