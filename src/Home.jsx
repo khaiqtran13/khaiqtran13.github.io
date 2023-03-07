@@ -47,7 +47,7 @@ export const Home = () => {
 
   return (
     <div className="relative flex justify-center h-screen bg-black">
-      <div className="md:w-[65%] mx-auto absolute top-60">
+      <div className="md:w-[65%] lg:w-[40%] mx-auto absolute top-60">
         <p className="text-sm text-indigo-200 mb-4">
           Hey, welcome to my website. I'm
         </p>
@@ -99,7 +99,7 @@ export const Home = () => {
         </div>
         <LanguageDiv className="mt-4">
           <p className="text-indigo-200 mb-4">Languages</p>
-          <div className="rounded-md h-content overflow-hidden font-semibold">
+          <div className="rounded-md h-content overflow-hidden md:font-semibold">
             <HsbarMin
               showTextIn
               data={[
