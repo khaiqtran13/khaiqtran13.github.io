@@ -4,17 +4,21 @@ import LinkedInIcon from "./linkedin.png";
 import GitHubIcon from "./github.png";
 import resumeIcon from "./resume.png";
 import styled, { keyframes } from "styled-components";
-import { fadeIn, bounceInRight } from "react-animations";
+import { fadeIn, bounceInRight, fadeInLeft } from "react-animations";
+import HsbarMin from "react-horizontal-stacked-bar-chart";
 export const Home = () => {
   const animation = keyframes`${fadeIn}`;
 
   const logoAnimation = keyframes`to {opacity: 1}${bounceInRight}`;
 
-  // const PulseDiv = styled.div`
-  //   animation: 5s ${animation};
-  //   animation-iteration-count: infinite;
-  //   animation-delay: 5s;
-  // `;
+  const languageAnimation = keyframes`to {opacity: 1}${fadeInLeft}`;
+
+  const LanguageDiv = styled.div`
+    animation: 2s ${languageAnimation};
+    animation-delay: 7.75s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  `;
 
   const TitleDiv = styled.div`
     animation: 2.5s ${animation};
@@ -93,17 +97,28 @@ export const Home = () => {
             </a>
           </ResumeDiv>
         </div>
-      </div>
-      <div className="absolute bottom-5 flex justify-center w-full">
-        {/* <PulseDiv
-          className="flex flex-col justify-center"
-          onClick={() => {
-            window.scrollBy(0, viewportHeight);
-          }}
-          // use react-scroller
-        >
-          <img src={ArrowDown} className="h-16" alt={"arrow down"} />
-        </PulseDiv> */}
+        <LanguageDiv className="mt-4">
+          <p className="text-indigo-200 mb-4">Languages</p>
+          <div className="rounded-md h-content overflow-hidden font-semibold">
+            <HsbarMin
+              showTextIn
+              data={[
+                {
+                  description: "Javascript",
+                  value: 80,
+                  color: "rgb(11, 16, 115)",
+                },
+                { description: "Python", value: 40, color: "rgb(67, 195, 97)" },
+                {
+                  description: "HTML/CSS",
+                  value: 60,
+                  color: "rgb(110, 57, 195)",
+                },
+                { description: "C++", value: 20, color: "rgb(195, 57, 57)" },
+              ]}
+            />
+          </div>
+        </LanguageDiv>
       </div>
     </div>
   );
