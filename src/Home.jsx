@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useRef } from "react";
 import { bounceInRight, fadeIn } from "react-animations";
 import TypeAnimation from "react-type-animation";
 import styled, { keyframes } from "styled-components";
@@ -8,15 +8,20 @@ import LinkedInIcon from "./linkedin.png";
 import resumeIcon from "./resume.png";
 
 export const Home = () => {
-  const [showText, setShowText] = React.useState(true);
+  const coverMeRef = useRef(null);
 
   const handleHover = () => {
-    setShowText(false);
+    coverMeRef.current.textContent = "CoverMe";
+    coverMeRef.current.className =
+      "leading-tight py-5 font-bold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500";
   };
 
   const handleHoverEnd = () => {
-    setShowText(true);
+    coverMeRef.current.textContent = "come see what i'm working on";
+    coverMeRef.current.className =
+      "text-lg leading-tight py-5 tracking-tight font-light text-center text-gray-400";
   };
+
   const animation = keyframes`${fadeIn}`;
 
   const logoAnimation = keyframes`to {opacity: 1}${bounceInRight}`;
@@ -43,6 +48,13 @@ export const Home = () => {
     opacity: 0;
     animation: 2s ${logoAnimation};
     animation-delay: 6.5s;
+    animation-fill-mode: forwards;
+  `;
+
+  const DelayedDiv = styled.div`
+    opacity: 0;
+    animation: 2s ${animation};
+    animation-delay: 7.75s;
     animation-fill-mode: forwards;
   `;
 
@@ -107,37 +119,31 @@ export const Home = () => {
             className="inline-block"
             style={{ textDecoration: "none", border: "none" }}
           >
-            <motion.div
-              className="w-[150px] h-[150px] rounded-3xl flex items-center justify-center transition-colors duration-700 ease-in-out mt-8 border-2 border-dashed border-rose-500  p-2"
-              style={{
-                backgroundColor: "var(--bg-color)",
-                "--bg-color": "black",
-              }}
-              whileHover={{
-                "--bg-color": "white",
-                scale: [1, 1.6, 1.2],
-                rotate: [0, 360],
-                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                color: "#fff",
-              }}
-              transition={{
-                duration: 1,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.5, 0.8, 1],
-              }}
-              onHoverStart={handleHover}
-              onHoverEnd={handleHoverEnd}
-            >
-              {showText ? (
-                <p className="text-lg leading-tight py-5 tracking-tight font-light text-center text-gray-400">
+            <DelayedDiv>
+              <motion.div
+                className="w-[150px] h-[150px] rounded-3xl flex items-center justify-center transition-colors duration-700 ease-in-out mt-8 border-2 border-dashed border-rose-500 p-2"
+                style={{
+                  backgroundColor: "var(--bg-color)",
+                  "--bg-color": "black",
+                }}
+                whileHover={{
+                  "--bg-color": "white",
+                  scale: [1, 1.6, 1.2],
+                  rotate: [0, 360],
+                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                  color: "#fff",
+                }}
+                onHoverStart={handleHover}
+                onHoverEnd={handleHoverEnd}
+              >
+                <p
+                  className="text-lg leading-tight py-5 tracking-tight font-light text-center text-gray-400"
+                  ref={coverMeRef}
+                >
                   come see what i'm working on
                 </p>
-              ) : (
-                <p className="text-2xl leading-tight py-5 font-bold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">
-                  CoverMe
-                </p>
-              )}
-            </motion.div>
+              </motion.div>
+            </DelayedDiv>
           </a>
         </div>
       </div>
