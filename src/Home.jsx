@@ -1,24 +1,25 @@
+import { motion } from "framer-motion";
 import React from "react";
+import { bounceInRight, fadeIn } from "react-animations";
 import TypeAnimation from "react-type-animation";
-import LinkedInIcon from "./linkedin.png";
-import GitHubIcon from "./github.png";
-import resumeIcon from "./resume.png";
 import styled, { keyframes } from "styled-components";
-import { fadeIn, bounceInRight, fadeInLeft } from "react-animations";
-import HsbarMin from "react-horizontal-stacked-bar-chart";
+import GitHubIcon from "./github.png";
+import LinkedInIcon from "./linkedin.png";
+import resumeIcon from "./resume.png";
+
 export const Home = () => {
+  const [showText, setShowText] = React.useState(true);
+
+  const handleHover = () => {
+    setShowText(false);
+  };
+
+  const handleHoverEnd = () => {
+    setShowText(true);
+  };
   const animation = keyframes`${fadeIn}`;
 
   const logoAnimation = keyframes`to {opacity: 1}${bounceInRight}`;
-
-  const languageAnimation = keyframes`to {opacity: 1}${fadeInLeft}`;
-
-  const LanguageDiv = styled.div`
-    animation: 2s ${languageAnimation};
-    animation-delay: 7.75s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-  `;
 
   const TitleDiv = styled.div`
     animation: 2.5s ${animation};
@@ -97,7 +98,54 @@ export const Home = () => {
             </a>
           </ResumeDiv>
         </div>
-        <LanguageDiv className="mt-4">
+
+        <div className="">
+          <a
+            href="https://www.covermyshifts.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+            style={{ textDecoration: "none", border: "none" }}
+          >
+            <motion.div
+              className="w-[150px] h-[150px] rounded-3xl flex items-center justify-center transition-colors duration-700 ease-in-out mt-8 border-2 border-dashed border-rose-500  p-2"
+              style={{
+                backgroundColor: "var(--bg-color)",
+                "--bg-color": "black",
+              }}
+              whileHover={{
+                "--bg-color": "white",
+                scale: [1, 1.6, 1.2],
+                rotate: [0, 360],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                color: "#fff",
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                times: [0, 0.2, 0.5, 0.8, 1],
+              }}
+              onHoverStart={handleHover}
+              onHoverEnd={handleHoverEnd}
+            >
+              {showText ? (
+                <p className="text-lg leading-tight py-5 tracking-tight font-light text-center text-gray-400">
+                  come see what i'm working on
+                </p>
+              ) : (
+                <p className="text-2xl leading-tight py-5 font-bold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">
+                  CoverMe
+                </p>
+              )}
+            </motion.div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* <LanguageDiv className="mt-4">
           <p className="text-indigo-200 mb-4">Languages</p>
           <div className="rounded-md h-content overflow-hidden md:font-semibold">
             <HsbarMin
@@ -118,8 +166,13 @@ export const Home = () => {
               ]}
             />
           </div>
-        </LanguageDiv>
-      </div>
-    </div>
-  );
-};
+        </LanguageDiv> */
+
+// const languageAnimation = keyframes`to {opacity: 1}${fadeInLeft}`;
+
+// const LanguageDiv = styled.div`
+//   animation: 2s ${languageAnimation};
+//   animation-delay: 7.75s;
+//   animation-fill-mode: forwards;
+//   opacity: 0;
+// `;
